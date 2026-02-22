@@ -5,13 +5,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/styles.css?v=<%= System.currentTimeMillis() %>">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 <h2>Mis Transacciones</h2>
 
-<table border="1">
+<table class="tabla">
     <tr>
         <th>ID</th>
         <th>Monto</th>
@@ -35,6 +37,9 @@
     %>
 </table>
 
-<a href="index.jsp"><button>Volver</button></a>
+ 
+
+<a href="index.jsp"><button class="btn">Volver</button></a>
+</div>
 </body>
 </html>
