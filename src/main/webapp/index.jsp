@@ -8,8 +8,8 @@
 <body>
     <h1>Bienvenido a tu Billetera</h1>
     <p>${usuarioLogueado.nombre}</p>
-    <a href="saldo">Ver saldo</a>
-    <a href="transacciones">
+<a href="saldo"><button>Ver saldo</button></a>
+ <a href="transacciones">
     <button>Ver mis transacciones</button>
 </a>
 <a href="deposito.jsp">

@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import util.ConexionDB;
+import Util.ConexionDB;
 
 public class DepositoService {
 

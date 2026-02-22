@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Model.Transaccion;
-import util.ConexionDB;
+import Util.ConexionDB;
 
 public class TransaccionDAO {
 	public List<Transaccion> obtenerPorUsuario(int usuarioId) {

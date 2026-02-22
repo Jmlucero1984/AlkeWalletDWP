@@ -35,6 +35,6 @@
     %>
 </table>
 
-<a href="index.jsp">Volver</a>
+<a href="index.jsp"><button>Volver</button></a>
 </body>
 </html>

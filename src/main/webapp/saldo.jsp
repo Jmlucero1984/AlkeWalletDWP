@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Saldo actual:</h2>
-    <p>${cuenta.saldo}</p>
-    <a href="index.jsp">Volver</a>
+    <p>${cuenta.balance}</p>
+    <a href="index.jsp"><button>Volver</button></a>
 </body>
 </html>

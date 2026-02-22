@@ -3,7 +3,7 @@ package DAO;
 import java.sql.*;
 
 import Model.Usuario;
-import util.ConexionDB;
+import Util.ConexionDB;
 
 public class UsuarioDAO {
 
