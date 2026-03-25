@@ -3,16 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="css/styles.css?v=<%= System.currentTimeMillis() %>">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Logueate con tus credenciales</title>
 </head>
 <body>
-<form action="login" method="post">
-    Email: <input type="text" name="email" />
-    Password: <input type="password" name="password" />
+<div class="container">
+<form action="login" method="post" class="form-login">
+    <label>Email:</label>
+    <input type="text" name="email">
+
+    <label>Password:</label>
+    <input type="password" name="password">
+
     <button type="submit">Ingresar</button>
 </form>
-
+</div>
 <p style="color:red">${error}</p>
 </body>
 </html>

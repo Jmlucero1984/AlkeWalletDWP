@@ -18,6 +18,13 @@ h1 {
 	color: #333;
 }
 
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 250px;
+}
+
 a {
 	text-decoration: none;
 }
@@ -36,6 +43,15 @@ a {
 
 .btn:hover {
 	background-color: #1b5fbd;
+}
+
+
+.btn.logout { 
+	background-color: rgb(232, 87, 0);
+}
+
+.btn.logout :hover {
+	background-color: red;
 }
 
 .btn-deposito {

@@ -30,6 +30,9 @@
 	<a href="retiro.jsp">
 		<button class="btn">Retirar dinero</button>
 	</a>
+	<form action="logout" method="post">
+    <button class="btn logout">Cerrar sesión</button>
+</form>
 	</div>
 	
 </body>

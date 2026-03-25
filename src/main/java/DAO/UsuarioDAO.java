@@ -7,15 +7,14 @@ import Util.ConexionDB;
 
 public class UsuarioDAO {
 
-    public Usuario buscarPorEmailYPassword(String email, String password) {
+    public Usuario buscarPorEmail(String email) {
 
         try (Connection conn = ConexionDB.getConnection()) {
 
-            String sql = "SELECT * FROM usuario WHERE email = ? AND password_hash = ?";
+            String sql = "SELECT * FROM usuario WHERE email = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
 
             stmt.setString(1, email);
-            stmt.setString(2, password);
 
             ResultSet rs = stmt.executeQuery();
 
