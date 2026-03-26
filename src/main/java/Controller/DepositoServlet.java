@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.DepositoDAO;
+import DAO.RetiroDAO;
 import Model.Usuario;
-import Service.DepositoService;
+ 
 
 /**
  * Servlet implementation class DepositoServlet
@@ -34,8 +36,8 @@ public class DepositoServlet extends HttpServlet {
 
 	        BigDecimal monto = new BigDecimal(request.getParameter("monto"));
 
-	        DepositoService service = new DepositoService();
-	        service.depositar(usuario.getId(), monto);
+	        DepositoDAO depositoDAO = new DepositoDAO();
+	        depositoDAO.depositar(usuario.getId(), monto);
 
 	        response.sendRedirect("index.jsp");
 	    }

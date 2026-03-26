@@ -2,6 +2,8 @@ package DAO;
 
 import java.sql.*;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import Model.Usuario;
 import Util.ConexionDB;
 
@@ -34,4 +36,5 @@ public class UsuarioDAO {
 
         return null;
     }
+
 }

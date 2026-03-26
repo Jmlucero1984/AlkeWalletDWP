@@ -17,7 +17,7 @@
 	 
 %>
 	<h1>Bienvenido a tu AlkeWallet</h1>
-	<p>${usuarioLogueado.nombre}</p>
+	<p class="user_name">${usuarioLogueado.nombre}</p>
 	<a href="saldo">
 		<button class="btn">Ver saldo</button>
 	</a>

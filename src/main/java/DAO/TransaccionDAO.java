@@ -30,6 +30,7 @@ public class TransaccionDAO {
 	    	            c2.usuario_id = ? 
 	    	            AND tt.codigo IN ('RECIBE TCDM MMO', 'RECIBE TCDM MMD', 'RECIBE TCIM')
 	    	        )
+	    	    ORDER BY t.fecha_creacion DESC
 	    	""";
 
 	    try (Connection con = ConexionDB.getConnection();

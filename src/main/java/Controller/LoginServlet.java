@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
+
+import DAO.UsuarioDAO;
 import Model.Usuario;
-import Service.UsuarioService;
+ 
 
 /**
  * Servlet implementation class LoginServlet
@@ -17,7 +20,29 @@ import Service.UsuarioService;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
-    private UsuarioService usuarioService = new UsuarioService();
+    private UsuarioDAO usuarioDAO = new UsuarioDAO();
+    
+	 public Usuario autenticar(String email, String password) {
+	    	
+	        Usuario usuario =  usuarioDAO.buscarPorEmail(email);
+	
+	        if (usuario == null) {
+	            return null;
+	        }
+	      
+	
+	        String hashGuardado = usuario.getPassword();
+	        if (hashGuardado.startsWith("$2y$")) {
+	        	hashGuardado = "$2a$" + hashGuardado.substring(4);
+	        }
+	
+	
+	        if (BCrypt.checkpw(password, hashGuardado)) {
+	            return usuario;
+	        }
+	
+	        return null;
+	    }
 
 
 
@@ -26,8 +51,11 @@ public class LoginServlet extends HttpServlet {
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        
+        
+        
 
-        Usuario usuario = usuarioService.autenticar(email,password);
+        Usuario usuario = autenticar(email,password);
 
         if (usuario != null) {
 

@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DAO.RetiroDAO;
 import Model.Usuario;
-import Service.RetiroService;
+ 
 
 /**
  * Servlet implementation class RetiroServlet
@@ -20,6 +21,7 @@ import Service.RetiroService;
 @WebServlet("/retirar")
 public class RetiroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	RetiroDAO retiroDAO = new RetiroDAO();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,10 +37,9 @@ public class RetiroServlet extends HttpServlet {
 
         BigDecimal monto = new BigDecimal(request.getParameter("monto"));
 
-        RetiroService service = new RetiroService();
 
         try {
-            service.retirar(usuario.getId(), monto);
+        	retiroDAO.retirar(usuario.getId(), monto);
             response.sendRedirect("index.jsp");
         } catch (RuntimeException e) {
             request.setAttribute("error", e.getMessage());
