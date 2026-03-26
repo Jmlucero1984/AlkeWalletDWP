@@ -35,10 +35,22 @@ public class DepositoServlet extends HttpServlet {
 	        Usuario usuario = (Usuario) session.getAttribute("usuarioLogueado");
 
 	        BigDecimal monto = new BigDecimal(request.getParameter("monto"));
+	        
+	        if(monto.compareTo(BigDecimal.ZERO)<=0) {
+	        	request.setAttribute("error", "Introduzca un monto mayor que 0");
+	        	   request.getRequestDispatcher("deposito.jsp")
+                   .forward(request, response);
+        
+	        } else {
 
-	        DepositoDAO depositoDAO = new DepositoDAO();
-	        depositoDAO.depositar(usuario.getId(), monto);
+		        DepositoDAO depositoDAO = new DepositoDAO();
+		        depositoDAO.depositar(usuario.getId(), monto);
+		        
+		        
 
-	        response.sendRedirect("index.jsp");
+		        response.sendRedirect("index.jsp");	
+	        }
+	        
+
 	    }
 	}

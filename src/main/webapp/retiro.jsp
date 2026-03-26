@@ -13,7 +13,9 @@
 
     Monto:
     <input type="number" step="0.01" name="monto" required />
-
+  	<p style="color:red">
+            ${error}
+        </p>
     <button type="submit" class="btn btn-retiro">Retirar</button>
 </form>
 
