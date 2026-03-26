@@ -9,7 +9,9 @@ public class Transaccion {
 
     private int transaccionId;
     private int tipoTransaccionId;
-    private Integer cuentaOrigenId;     
+    private String tipoTransaccionCodigo;
+
+	private Integer cuentaOrigenId;     
     private Integer cuentaDestinoId;    
 
     private BigDecimal cantidad;
@@ -81,6 +83,15 @@ public class Transaccion {
     public void setTipoTransaccionId(int tipoTransaccionId) {
         this.tipoTransaccionId = tipoTransaccionId;
     }
+    
+    public String getTipoTransaccionCodigo() {
+		return tipoTransaccionCodigo;
+	}
+
+	public void setTipoTransaccionCodigo(String tipoTransaccionCodigo) {
+		this.tipoTransaccionCodigo = tipoTransaccionCodigo;
+	}
+
 
     public Integer getCuentaOrigenId() {
         return cuentaOrigenId;

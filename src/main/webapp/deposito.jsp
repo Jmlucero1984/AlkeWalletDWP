@@ -5,7 +5,7 @@
 <head>
 <link rel="stylesheet" href="css/styles.css?v=<%= System.currentTimeMillis() %>">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Haz tus depósitos</title>
 </head>
 <body>
 <div class="container">

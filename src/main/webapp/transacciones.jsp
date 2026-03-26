@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="css/styles.css?v=<%= System.currentTimeMillis() %>">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Consulta tus transacciones</title>
 </head>
 <body>
 <div class="container">
@@ -17,6 +17,7 @@
     <tr>
         <th>ID</th>
         <th>Monto</th>
+         <th>Tipo</th>
         <th>Estado</th>
         <th>Fecha</th>
     </tr>
@@ -29,6 +30,7 @@
     <tr>
         <td><%= t.getTransaccionId() %></td>
         <td><%= t.getCantidad() %></td>
+        <td><%= t.getTipoTransaccionCodigo() %></td>
         <td><%= t.getEstado() %></td>
         <td><%= t.getFechaCreacion() %></td>
     </tr>

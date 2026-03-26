@@ -15,12 +15,22 @@ public class TransaccionDAO {
 	    List<Transaccion> lista = new ArrayList<>();
 
 	    String sql = """
-	        SELECT t.*
-	        FROM transaccion t
-	        JOIN cuenta c1 ON t.cuenta_origen_id = c1.cuenta_id
-	        JOIN cuenta c2 ON t.cuenta_destino_id = c2.cuenta_id
-	        WHERE c1.usuario_id = ? OR c2.usuario_id = ?
-	    """;
+	    	    SELECT t.*, tt.codigo
+	    	    FROM transaccion t
+	    	    JOIN cuenta c1 ON t.cuenta_origen_id = c1.cuenta_id
+	    	    JOIN cuenta c2 ON t.cuenta_destino_id = c2.cuenta_id
+	    	    JOIN tipo_transaccion tt ON t.tipo_transaccion_id = tt.tipo_transaccion_id
+	    	    WHERE 
+	    	        (
+	    	            c1.usuario_id = ? 
+	    	            AND tt.codigo IN ('DEPOSITO','RETIRO','REALIZA TCDM MMO', 'REALIZA TCDM MMD', 'REALIZA TCIM')
+	    	        )
+	    	        OR
+	    	        (
+	    	            c2.usuario_id = ? 
+	    	            AND tt.codigo IN ('RECIBE TCDM MMO', 'RECIBE TCDM MMD', 'RECIBE TCIM')
+	    	        )
+	    	""";
 
 	    try (Connection con = ConexionDB.getConnection();
 	         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -34,6 +44,7 @@ public class TransaccionDAO {
 	            Transaccion t = new Transaccion();
 	            t.setTransaccionId(rs.getInt("transaccion_id"));
 	            t.setCantidad(rs.getBigDecimal("cantidad"));
+	            t.setTipoTransaccionCodigo(rs.getString("codigo"));
 	            t.setEstado(rs.getString("estado"));
 	            t.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
 
