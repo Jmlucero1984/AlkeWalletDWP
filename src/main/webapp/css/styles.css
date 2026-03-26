@@ -23,6 +23,8 @@ h1 {
     flex-direction: column;
     gap: 10px;
     width: 250px;
+    align-items: center;
+
 }
 
 a {
@@ -34,7 +36,7 @@ a {
 	width: 220px;
 	margin: 10px auto;
 	padding: 12px;
-	background-color: #2d89ef;
+	background-color: rgb(147, 126, 228);
 	color: white;
 	text-decoration: none;
 	border-radius: 8px;

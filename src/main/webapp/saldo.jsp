@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h2>Saldo actual:</h2>
-    <p>${cuenta.balance}</p>
+    <p>$ ${cuenta.balance}</p>
     <a href="index.jsp"><button class="btn">Volver</button></a>
     </div>
 </body>

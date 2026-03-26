@@ -9,16 +9,19 @@
 </head>
 <body>
 <div class="container">
+<h1>AlkeWallet</h1>
 <form action="login" method="post" class="form-login">
-    <label>Email:</label>
+    <label>EMAIL:</label>
     <input type="text" name="email">
 
-    <label>Password:</label>
+    <label>PASSWORD:</label>
     <input type="password" name="password">
+       <p style="color:red">
+            ${error}
+        </p>
 
-    <button type="submit">Ingresar</button>
+    <button class="btn" type="submit">Ingresar</button>
 </form>
 </div>
-<p style="color:red">${error}</p>
 </body>
 </html>
